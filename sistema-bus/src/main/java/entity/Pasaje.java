@@ -5,7 +5,7 @@ import lombok.*;
 
 @Entity
 @Table(
-    name = "PASAJE",
+    name = "pasaje",
     uniqueConstraints = @UniqueConstraint(columnNames = {"asiento", "viaje_id"})
 )
 @Getter
@@ -16,15 +16,15 @@ public class Pasaje {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer pasajeId;
+    private Integer id;
 
     private Integer asiento;
 
     @ManyToOne
-    @JoinColumn(name = "CLIENTE_ID")
+    @JoinColumn(name = "cliente_id")
     private Cliente cliente;
 
     @ManyToOne
-    @JoinColumn(name = "VIAJE_ID")
+    @JoinColumn(name = "viaje_id")
     private Viaje viaje;
 }

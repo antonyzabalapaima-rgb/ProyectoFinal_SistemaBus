@@ -5,8 +5,14 @@ import lombok.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
+import jakarta.persistence.*;
+import lombok.*;
+
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 @Entity
-@Table(name = "VIAJE")
+@Table(name = "viaje")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -15,16 +21,16 @@ public class Viaje {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer viajeId;
+    private Integer id;
 
     private LocalDate fecha;
     private LocalTime hora;
 
     @ManyToOne
-    @JoinColumn(name = "BUS_ID")
+    @JoinColumn(name = "bus_id")
     private Bus bus;
 
     @ManyToOne
-    @JoinColumn(name = "RUTA_ID")
+    @JoinColumn(name = "ruta_id")
     private Ruta ruta;
 }
