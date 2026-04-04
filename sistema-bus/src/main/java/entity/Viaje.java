@@ -5,11 +5,7 @@ import lombok.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-import jakarta.persistence.*;
-import lombok.*;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
 
 @Entity
 @Table(name = "viaje")
